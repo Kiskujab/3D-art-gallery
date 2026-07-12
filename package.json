@@ -1,0 +1,28 @@
+{
+  "name": "art-history-museum",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/build-data.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/build-data.mjs",
+    "build": "vite build",
+    "postbuild": "node scripts/build-og.mjs",
+    "serve": "node server/index.mjs",
+    "etl": "node etl/fetch.mjs",
+    "etl:hu": "node etl/enrich-hu.mjs",
+    "etl:genres": "node etl/enrich-genres.mjs",
+    "db:load": "node etl/load-db.mjs"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "gsap": "^3.12.5",
+    "pg": "^8.12.0",
+    "three": "^0.166.1"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.3.0",
+    "vite": "^5.4.0"
+  }
+}

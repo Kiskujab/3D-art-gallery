@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>The Timeline Museum — Art History</title>
+  <meta name="description" content="A walkable 3D museum of art history: zoom a timeline of 16 periods, step into first-person galleries hung with real paintings from Wikimedia Commons, and wander from Medieval to Contemporary room by room." />
+  <meta name="theme-color" content="#100d09" />
+  <meta property="og:title" content="The Timeline Museum — Art History" />
+  <meta property="og:description" content="A walkable 3D museum of art history — first-person galleries hung with real paintings from Wikimedia Commons, from Medieval to Contemporary." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='16' y='24' font-size='24' text-anchor='middle' fill='%23c8a45a'%3E✦%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <!-- Shown instead of the app on phones/tablets and browsers without WebGL 2 -->
+  <div id="device-gate" hidden>
+    <div class="gate-inner">
+      <div class="loading-mark">✦</div>
+      <h1 data-i18n="brand">The Timeline Museum</h1>
+      <p id="gate-reason"></p>
+      <p class="gate-sub" data-i18n="gate.sub">A first-person walk through 16 periods of art history —
+        231 artists, 3,100 paintings from Wikimedia Commons.</p>
+    </div>
+  </div>
+
+  <div id="loading">
+    <div class="loading-inner">
+      <div class="loading-mark">✦</div>
+      <h1 data-i18n="brand">The Timeline Museum</h1>
+      <p id="loading-status" data-i18n="loading.status">Opening the archives…</p>
+    </div>
+  </div>
+
+  <!-- Timeline view -->
+  <div id="timeline-view" hidden>
+    <canvas id="timeline-canvas"></canvas>
+    <header id="topbar">
+      <div class="brand"><span class="brand-mark">✦</span> <span data-i18n="brand">The Timeline Museum</span></div>
+      <div id="filter-root"></div>
+      <div id="salon-root"></div>
+      <div class="hint" data-i18n="hint.timeline">scroll to zoom · drag to pan</div>
+      <div id="settings-root"></div>
+    </header>
+  </div>
+
+  <!-- Artist card layer -->
+  <div id="card-layer" hidden></div>
+
+  <!-- 3D museum view -->
+  <div id="museum-view" hidden>
+    <canvas id="museum-canvas"></canvas>
+    <div id="museum-hud" hidden>
+      <div id="museum-title"></div>
+      <div id="museum-help" data-i18n="museum.help">H — controls</div>
+      <button id="museum-exit" data-i18n="museum.back">← Back to the timeline</button>
+      <div id="crosshair">·</div>
+      <div id="tour-caption" hidden></div>
+      <div id="fav-toast" hidden></div>
+      <!-- floating buttons in touch mode: map, tour, heart, menu -->
+      <div id="touch-hud" hidden>
+        <button id="th-map" aria-label="Map">🗺</button>
+        <button id="th-tour" aria-label="Guided tour">▶</button>
+        <button id="th-fav" aria-label="Favourite">♥</button>
+        <button id="th-menu" aria-label="Menu">☰</button>
+      </div>
+      <div id="help-root" hidden></div>
+    </div>
+    <div id="minimap-root" hidden></div>
+    <div id="quickjump-root" hidden></div>
+    <div id="museum-enter-overlay" hidden>
+      <div class="enter-inner">
+        <h2 id="enter-artist-name"></h2>
+        <p id="enter-artist-sub"></p>
+        <button id="enter-museum-btn" data-i18n="museum.enter">Step inside</button>
+        <div><button id="enter-tour-btn" class="enter-tour" data-i18n="museum.tour">▶ Guided tour</button></div>
+        <div id="enter-themes" hidden></div>
+        <div><button id="enter-vr-btn" class="enter-tour" data-i18n="museum.vr" hidden>Enter VR</button></div>
+        <div><button id="enter-back-btn" class="enter-back" data-i18n="museum.back">← Back to the timeline</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Painting inspect layer -->
+  <div id="inspect-layer" hidden></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

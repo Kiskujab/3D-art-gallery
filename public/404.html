@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Not found — The Timeline Museum</title>
+  <meta name="robots" content="noindex">
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+           background: #100d09; color: #e8dcc3; font: 16px/1.6 Georgia, 'Times New Roman', serif; }
+    .inner { text-align: center; padding: 2rem; }
+    .mark { font-size: 2.2rem; color: #c8a45a; }
+    a { color: #c8a45a; }
+  </style>
+</head>
+<body>
+  <div class="inner">
+    <div class="mark">✦</div>
+    <h1>This gallery doesn't exist</h1>
+    <p>The page you followed leads nowhere in the museum.</p>
+    <p><a id="home" href="/">← Back to the timeline</a></p>
+  </div>
+  <script>
+    // GitHub Pages project site: the first path segment is the repo name,
+    // so /<repo>/anything → /<repo>/
+    var seg = location.pathname.split('/')[1];
+    document.getElementById('home').href = seg ? '/' + seg + '/' : '/';
+  </script>
+</body>
+</html>

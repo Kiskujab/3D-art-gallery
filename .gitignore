@@ -1,0 +1,19 @@
+# dependencies + build output
+node_modules/
+dist/
+
+# secrets — DATABASE_URL lives in .env.local, never commit it
+.env
+.env.*
+
+# generated at build time (scripts/build-data.mjs)
+public/data/
+
+# local ETL cache + local tooling
+data/cache/
+.claude/
+
+# OS noise
+.DS_Store
+Thumbs.db
+*.log
