@@ -10,6 +10,9 @@ Wikimedia Commons — nothing is AI-generated. The dataset covers 16 periods,
 
 **Live: <https://kiskujab.github.io/3D-art-gallery/>**
 
+Created by **Kálmán Jakab** — code under the [MIT license](LICENSE), content
+licensing in [NOTICE.md](NOTICE.md).
+
 The site is fully static: the dataset is baked into the build and the
 paintings load straight from Wikimedia Commons. Every push to `main` rebuilds
 and redeploys it to GitHub Pages via the included workflow — no server, no
@@ -50,8 +53,8 @@ npm run dev          # http://localhost:5173
   panel tells its Wikipedia story (the pause scales with the story's length).
   It walks through the doorways into the next artist forever. Press T or ESC
   to end it, or just click to take over on foot from wherever it left you.
-- **Museum map (M)** — the whole 500-year enfilade as a strip of 231
-  galleries in chronological order, coloured by period, with your current
+- **Museum map (M)** — the whole 500-year enfilade as a wrapping grid of 231
+  gallery cells in chronological order, coloured by period, with your current
   room marked in gold. Hover names a gallery; click teleports you there.
 - **Placard (E)** — look at a painting and press E to read its story on a
   floating panel without breaking your stride (it closes with E, or by
@@ -125,6 +128,11 @@ Optionally `npm run db:load` loads the dataset into Neon Postgres
 API serves it from there — the deployed site never touches a database.
 
 ### Sources & licensing
+
+The application code is © 2026 Kálmán Jakab, released under the
+[MIT license](LICENSE); the content's licensing (Wikipedia CC BY-SA 4.0,
+Wikidata CC0, per-image Commons licenses) is summarized in
+[NOTICE.md](NOTICE.md).
 
 Images are Wikimedia Commons files (public domain / free licenses). For
 post-1930 movements whose works Commons cannot host (Surrealism → Contemporary),

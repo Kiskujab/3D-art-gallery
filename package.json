@@ -2,6 +2,8 @@
   "name": "art-history-museum",
   "version": "1.0.0",
   "private": true,
+  "author": "Kálmán Jakab",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "predev": "node scripts/build-data.mjs",

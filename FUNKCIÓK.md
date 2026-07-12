@@ -6,6 +6,7 @@
 - Felfedezés: egyesített kereső (művész + korszak, ékezet-érzéketlen), Művészek/Korszakok fülek, ↑↓/⏎/ESC, szűrő-chip
 - ♥ Szalonom gomb élő kedvenc-számlálóval → kedvencek terme
 - Beállítások menü
+- Készítő-felirat a márkanév alatt (Kálmán Jakab, EN/HU)
 - Ctrl/Cmd+K: az idővonalon a Felfedezést nyitja
 
 ## Idővonal
@@ -53,7 +54,7 @@
 - Üresen meghívó tábla; számláló + törlés a beállításokban
 
 ## Térkép + súgó
-- M: enfilade-csík korszakszínekkel, aktuális terem kiemelve, kattintás = teleport
+- M: teremrács korszakszínekkel (sortöréssel mind a 232 cella elfér), aktuális kiemelve, hover = név, kattintás = teleport
 - H: billentyű-/érintés-táblázat
 
 ## Linkek, megosztás
@@ -80,6 +81,7 @@
 - Build: `build-data.mjs` (adat a dist-be) → vite (relatív base `./`) → `build-og.mjs` (megosztóoldalak)
 - Képek hotlinkelve a Wikimedia Commonsról — a hostot nem terhelik
 - 404.html: márkázott „nincs ilyen terem" oldal
+- Licenc: kód MIT (`LICENSE`, © Kálmán Jakab) · tartalom Wikipédia CC BY-SA / Wikidata CC0 / Commons (`NOTICE.md`)
 
 ## Adat-pipeline + helyi szerver
 - `npm run etl`: wiki-fetch (bio, portré, festmények, sztorik, tények; cache-elt, udvarias sleep-ekkel)

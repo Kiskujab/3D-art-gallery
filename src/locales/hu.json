@@ -1,6 +1,7 @@
 {
   "app.title": "Az Idővonal Múzeum — Művészettörténet",
   "brand": "Az Idővonal Múzeum",
+  "brand.by": "készítette: Kálmán Jakab",
 
   "loading.status": "Az archívum megnyitása…",
   "loading.counts": "{periods} korszak · {artists} művész",

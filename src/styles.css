@@ -85,6 +85,11 @@ button { font: inherit; cursor: pointer; }
   white-space: nowrap;
 }
 .brand-mark { color: var(--gold); margin-right: 6px; }
+.brand-by {
+  display: block; margin-top: 3px;
+  font-size: 10px; letter-spacing: .22em;
+  color: rgba(244,239,229,.5);
+}
 .hint {
   margin-left: auto; font-size: 12.5px; font-style: italic;
   color: rgba(244,239,229,.45); white-space: nowrap;
@@ -575,27 +580,34 @@ button { font: inherit; cursor: pointer; }
 .mm-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
 .mm-title { font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase; color: rgba(244,239,229,.85); }
 .mm-tip { font-size: 11.5px; font-style: italic; color: rgba(244,239,229,.45); }
-.mm-strip { display: flex; align-items: flex-end; gap: 2px; height: 36px; margin-top: 12px; }
-.mm-cell {
-  flex: 1 1 0; min-width: 3px; height: 22px;
-  border: none; padding: 0; border-radius: 1px; cursor: pointer;
-  background: var(--c); opacity: .55;
-  transition: height .15s, opacity .15s;
+/* 231+ galleries can't share one row — wrap into a grid of uniform cells
+   (periods interleave chronologically, so colour alone marks them) */
+.mm-strip {
+  display: flex; flex-wrap: wrap; align-content: flex-start; gap: 4px 2px;
+  margin-top: 12px; max-height: 38vh; overflow-y: auto;
 }
-.mm-cell:hover { opacity: 1; height: 30px; }
+.mm-cell {
+  flex: 0 0 auto; width: 11px; height: 16px;
+  border: none; padding: 0; border-radius: 2px; cursor: pointer;
+  background: var(--c); opacity: .55;
+  transition: opacity .15s, box-shadow .15s;
+}
+.mm-cell:hover { opacity: 1; box-shadow: 0 0 8px rgba(244,239,229,.35); }
 .mm-cell.current {
-  opacity: 1; height: 36px;
+  opacity: 1;
   outline: 1px solid var(--gold);
   box-shadow: 0 0 12px rgba(200,164,90,.55);
 }
 .mm-cell.salon {
-  flex: 1.8 1 0;
+  width: 20px;
   background: linear-gradient(180deg, #e8cd8d, #a8823c);
 }
 .mm-label {
   margin-top: 9px; min-height: 17px; text-align: center;
   font-size: 12.5px; font-style: italic; color: var(--ivory-dim);
 }
+/* touch mode: keep the panel clear of the floating buttons on the right */
+body.touch .mm-panel { width: calc(100vw - 158px); }
 
 /* ---------- controls help (H) ---------- */
 #help-root {
@@ -719,6 +731,7 @@ button { font: inherit; cursor: pointer; }
 @media (max-width: 640px) {
   #topbar { gap: 10px; padding: 12px 12px; }
   .brand { font-size: 12px; letter-spacing: .1em; }
+  .brand-by { font-size: 8.5px; letter-spacing: .14em; margin-top: 2px; }
   .settings-panel { width: min(330px, calc(100vw - 24px)); }
   .filter-panel { width: min(430px, calc(100vw - 24px)); max-height: 74vh; }
   .qj-panel { width: calc(100vw - 24px); }

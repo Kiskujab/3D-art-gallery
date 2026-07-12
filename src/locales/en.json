@@ -1,6 +1,7 @@
 {
   "app.title": "The Timeline Museum — Art History",
   "brand": "The Timeline Museum",
+  "brand.by": "by Kálmán Jakab",
 
   "loading.status": "Opening the archives…",
   "loading.counts": "{periods} periods · {artists} artists",

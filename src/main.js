@@ -37,6 +37,8 @@ async function loadData() {
 async function boot() {
   initI18n();
   applyStatic();
+  // lets the stylesheet make room for the floating touch buttons (e.g. the map panel)
+  if (IS_TOUCH) document.body.classList.add('touch');
 
   const why = incompatibleReason();
   if (why) {
